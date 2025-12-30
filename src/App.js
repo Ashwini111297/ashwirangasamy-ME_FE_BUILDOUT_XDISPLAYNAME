@@ -21,13 +21,17 @@ function App() {
       <h1>Full Name Display</h1>
 
       <form onSubmit={handleSubmit}>
+        {/* FIRST NAME INPUT */}
         <input
+          type="text"                // ✅ REQUIRED
           placeholder="First Name"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
 
+        {/* LAST NAME INPUT */}
         <input
+          type="text"                // ✅ REQUIRED
           placeholder="Last Name"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
@@ -36,7 +40,7 @@ function App() {
         <button type="submit">Submit</button>
       </form>
 
-      {/* REQUIRED output */}
+      {/* OUTPUT */}
       {fullName && <h3>Full Name: {fullName}</h3>}
     </div>
   );
