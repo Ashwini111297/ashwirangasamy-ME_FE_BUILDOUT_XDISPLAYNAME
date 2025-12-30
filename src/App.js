@@ -17,30 +17,34 @@ function App() {
 
   return (
     <div>
-      {/* REQUIRED heading */}
       <h1>Full Name Display</h1>
 
       <form onSubmit={handleSubmit}>
-        {/* FIRST NAME INPUT */}
-        <input
-          type="text"                // ✅ REQUIRED
-          placeholder="First Name"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
+        <div>
+          <label>
+            First Name:
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </label>
+        </div>
 
-        {/* LAST NAME INPUT */}
-        <input
-          type="text"                // ✅ REQUIRED
-          placeholder="Last Name"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
+        <div>
+          <label>
+            Last Name:
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </label>
+        </div>
 
         <button type="submit">Submit</button>
       </form>
 
-      {/* OUTPUT */}
       {fullName && <h3>Full Name: {fullName}</h3>}
     </div>
   );
