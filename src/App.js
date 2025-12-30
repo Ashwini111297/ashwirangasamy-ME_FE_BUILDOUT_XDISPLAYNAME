@@ -8,37 +8,36 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!firstName.trim() || !lastName.trim()) {
+    if (firstName && lastName) {
+      setFullName(`${firstName} ${lastName}`);
+    } else {
       setFullName("");
-      return;
     }
-
-    setFullName(`${firstName} ${lastName}`);
   };
 
   return (
     <div>
+      {/* REQUIRED heading */}
+      <h1>Full Name Display</h1>
+
       <form onSubmit={handleSubmit}>
         <input
-          type="text"
           placeholder="First Name"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
-          required
         />
 
         <input
-          type="text"
           placeholder="Last Name"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
-          required
         />
 
         <button type="submit">Submit</button>
       </form>
 
-      {fullName && <h3>{fullName}</h3>}
+      {/* REQUIRED output */}
+      {fullName && <h3>Full Name: {fullName}</h3>}
     </div>
   );
 }
